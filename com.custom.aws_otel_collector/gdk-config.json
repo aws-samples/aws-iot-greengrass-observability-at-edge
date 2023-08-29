@@ -1,0 +1,16 @@
+{
+  "component": {
+    "com.custom.aws_otel_collector": {
+      "author": "AWS-IOT-BLOG",
+      "version": "NEXT_PATCH",
+      "build": {
+        "build_system": "zip"
+      },
+      "publish": {
+        "bucket": "aws-iot-blog-samples",
+        "region": "us-east-1"
+      }
+    }
+  },
+  "gdk_version": "1.0.0"
+}

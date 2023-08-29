@@ -1,0 +1,22 @@
+---
+RecipeFormatVersion: "2020-01-25"
+ComponentName: "com.custom.aws_otel_collector"
+ComponentVersion: "{COMPONENT_VERSION}"
+ComponentType: "aws.greengrass.generic"
+ComponentDescription: "This is a wrapper component for aws-otel-collector"
+ComponentPublisher: "{COMPONENT_AUTHOR}"
+ComponentDependencies:
+  aws.greengrass.TokenExchangeService:
+    VersionRequirement: ">=2.0.3"
+    DependencyType: "HARD"
+Manifests:
+- Platform:
+    os: "linux"
+    architecture: "amd64"
+  Lifecycle:
+    Install:
+      Script: "wget -P {artifacts:decompressedPath}/com.custom.aws_otel_collector/ https://aws-otel-collector.s3.amazonaws.com/amazon_linux/amd64/latest/aws-otel-collector.rpm\nsudo rpm -Uvh --force {artifacts:decompressedPath}/com.custom.aws_otel_collector/aws-otel-collector.rpm\nsudo systemctl disable aws-otel-collector"
+      RequiresPrivilege: true
+    Run:
+      Script: "/opt/aws/aws-otel-collector/bin/aws-otel-collector --config /opt/aws/aws-otel-collector/etc/config.yaml"
+      RequiresPrivilege: true
