@@ -13,7 +13,7 @@ For more information on GDK CLI, please refer to the [AWS IoT Greengrass Develop
 
 ## Reference
 
-For a detailed walkthrough on how to use the components and samples in this repository, please refer to the [Monitor edge application performance using AWS IoT Greengrass and AWS Distro for OpenTelemetry](https://aws.amazon.com/blogs/iot/) blog post.
+For a detailed walkthrough on how to use the components and samples in this repository, please refer to the [Monitor edge application performance using AWS IoT Greengrass and AWS Distro for OpenTelemetry](https://aws.amazon.com/blogs/iot/monitor-edge-application-performance-using-aws-iot-greengrass-and-aws-distro-for-opentelemetry/) blog post.
 
 ## Security
 
