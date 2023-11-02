@@ -15,7 +15,7 @@ Manifests:
     architecture: "amd64"
   Lifecycle:
     Install:
-      Script: "wget -P {artifacts:decompressedPath}/com.custom.aws_otel_collector/ https://aws-otel-collector.s3.amazonaws.com/amazon_linux/amd64/latest/aws-otel-collector.rpm\nsudo rpm -Uvh --force {artifacts:decompressedPath}/com.custom.aws_otel_collector/aws-otel-collector.rpm\nsudo systemctl disable aws-otel-collector\nsudo wget -O /opt/aws/aws-otel-collector/etc/config.yaml https://raw.githubusercontent.com/aws-observability/aws-otel-collector/main/config.yaml"
+      Script: "wget -P {work:path}/com.custom.aws_otel_collector/ https://aws-otel-collector.s3.amazonaws.com/amazon_linux/amd64/latest/aws-otel-collector.rpm\nsudo rpm -Uvh --force {work:path}/com.custom.aws_otel_collector/aws-otel-collector.rpm\nsudo systemctl disable aws-otel-collector\nsudo wget -O /opt/aws/aws-otel-collector/etc/config.yaml https://raw.githubusercontent.com/aws-observability/aws-otel-collector/main/config.yaml"
       RequiresPrivilege: true
     Run:
       Script: "/opt/aws/aws-otel-collector/bin/aws-otel-collector --config /opt/aws/aws-otel-collector/etc/config.yaml"
